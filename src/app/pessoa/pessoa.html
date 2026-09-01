@@ -1,12 +1,25 @@
 <h2>Lista de Pessoas</h2>
 
-@for (p of pessoas; track p.id) {
-  <article class="cartao">
-    <h3>{{ p.nome }}</h3>
-    <p><strong>Curso:</strong> {{ p.curso }}</p>
-    <p><strong>E-mail:</strong> {{ p.email }}</p>
-    <p><strong>Telefone:</strong> {{ p.telefone || 'Não informado' }}</p>
-    <small>Vínculo: {{ p.vinculo }} | Ativo: {{ p.ativo ? 'Sim' : 'Não' }}</small>
+@for (res of resultados; track res.pessoa.id) {
+  <article class="cartao" [class.invalido]="res.erros.length > 0">
+    <h3>{{ res.pessoa.nome }}</h3>
+    <p><strong>Curso:</strong> {{ res.pessoa.curso }}</p>
+    <p><strong>E-mail:</strong> {{ res.pessoa.email }}</p>
+    <p><strong>Telefone:</strong> {{ res.pessoa.telefone || 'Não informado' }}</p>
+    <small>Vínculo: {{ res.pessoa.vinculo }} | Ativo: {{ res.pessoa.ativo ? 'Sim' : 'Não' }}</small>
+    
+    @if (res.erros.length > 0) {
+      <div class="caixa-erro">
+        @if (errosGlobais.length > 0) {
+  <div style="background: red; color: white; padding: 10px; margin-bottom: 20px; font-weight: bold;">
+    {{ errosGlobais[0] }}
+  </div>
+}
+        @for (erro of res.erros; track erro) {
+          <p>❌ {{ erro }}</p>
+        }
+      </div>
+    }
   </article>
 } @empty {
   <p>Nenhuma pessoa cadastrada na base.</p>

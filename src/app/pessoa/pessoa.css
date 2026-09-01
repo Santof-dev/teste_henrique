@@ -5,3 +5,14 @@
   margin-bottom: 16px;
   background-color: #FFFFFF;
 }
+
+.cartao.invalido {
+  border: 2px solid red;
+}
+
+.caixa-erro {
+  color: red;
+  margin-top: 12px;
+  font-size: 14px;
+  font-weight: 600;
+}
