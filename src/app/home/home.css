@@ -1,0 +1,20 @@
+.cartao-boas-vindas {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 40px;
+  text-align: center;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  margin: 40px auto;
+}
+
+.cartao-boas-vindas h2 {
+  color: #004a8f;
+  margin-bottom: 12px;
+}
+
+.cartao-boas-vindas p {
+  color: #666;
+}

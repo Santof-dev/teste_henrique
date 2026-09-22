@@ -1,15 +1,19 @@
-<h1 id="title">{{ title() }}</h1>
+<header class="cabecalho">
+  <h1 id="title">{{ title() }}</h1>
+  
+  <nav class="menu">
+    <a routerLink="/" 
+       routerLinkActive="ativo" 
+       [routerLinkActiveOptions]="{exact: true}">
+      Início
+    </a>
+    <a routerLink="/pessoa" 
+       routerLinkActive="ativo">
+      Pessoas
+    </a>
+  </nav>
+</header>
 
-<nav class="menu">
-  <a routerLink="/"
-     routerLinkActive="ativo"
-     [routerLinkActiveOptions]="{exact: true}">
-    Início
-  </a>
-  <a routerLink="/pessoa"
-     routerLinkActive="ativo">
-    Pessoas
-  </a>
-</nav>
-
-<router-outlet />
+<main class="conteudo">
+  <router-outlet />
+</main>

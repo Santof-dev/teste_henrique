@@ -12,5 +12,5 @@ import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('agenda-unijorge');
+  protected readonly title = signal('Cadastro Unijorge');
 }
